@@ -35,3 +35,17 @@ podman commit mysql-basic  mysql-custom
 ## Para etiquetar una imagen, utilice el comando:podman TAG
 
 podman tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+
+podman tag mysql-custom  devops/mysql
+podman tag mysql-custom  devops/mysql:snapshot
+
+## Publicación de imágenes en un REGISTRY
+## Para publicar una imagen en un registro, debe residir en el almacenamiento local de Podman
+## y estar etiquetada con fines de identificación. Para insertar la imagen en el Registro, 
+## utilice el subcomando:push
+
+podman push [OPTIONS] IMAGE [DESTINATION]
+
+## Por ejemplo, para insertar la imagen en su repositorio, utilice el siguiente comando:bitnami/nginx
+
+podman push quay.io/bitnami/nginx
